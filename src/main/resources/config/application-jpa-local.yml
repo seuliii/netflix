@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/netflix_db
+    username: postgres
+    password: 1234
+
+  jpa:
+    database: postgresql
+    open-in-view: false #'Open EntityManager in View' 패턴 사용 여부를 지정
+    hibernate:
+      ddl-auto: validate #개발중엔 create(테이블을 drop 후 재생성)가 편리하지만 운영환경에선 none 속성을 사용해야함
+    properties:
+      hibernate:
+        show_sql: true  #sql문을 콘솔에 출력할지 여부 
+        format_sql: true  #sql문을 포맷팅(가독성 향상)할지 여부
+        use_sql_comments: true  #sql 주석을 사용할지 여부
